@@ -192,13 +192,22 @@
         <script src="js/scripts.js"></script>
        <script>
 
-       $(document).ready(function(){
-            $("#searchInput").on("keyup", function() {
-                var value = $(this).val().toLowerCase();
-                $(".dropdown-menu a").filter(function() {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                });
-            });
+   
+        // Enable dropdown search functionality
+        document.getElementById("searchInput").addEventListener("input", function() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('searchInput');
+            filter = input.value.toUpperCase();
+            div = document.getElementById("dropdownMenuButton");
+            a = div.getElementsByTagName('a');
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
         });
            
            function addHelloWorld() {
