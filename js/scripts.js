@@ -47,3 +47,8 @@ window.addEventListener('DOMContentLoaded', event => {
   $('#html-input').on('input', function() {
     updateOutput();
   });
+
+    function addHelloWorld() {
+        var textArea = document.getElementById('html-input');
+        textArea.value += '<p>Hello World</p>';
+    }
