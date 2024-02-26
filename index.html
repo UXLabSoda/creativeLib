@@ -65,16 +65,13 @@
             <section class="resume-section" id="HTML">
                 <div class="resume-section-content">
                     <h2 class="mb-5">HTML</h2>
-                 
-<h3>Hello world example</h3>
-<p>In the code box below you can see that the text in this case "Hello World" is displayed this is because it sits within a paragraph or &lt;p&gt; &lt;/p&gt; </p>
-<p>You can edit the output by changing the text between the P tags try it out below</p>
+                    <button onclick="addHelloWorld()"> Hello World</button>
+<p id="helloworld" ></p>
 <div class="container mt-4">
     <div class="row">
         <div class="col-md-6">
             <h3>Edit HTML Code</h3>
             <textarea id="html-input" class="form-control" rows="10"></textarea>
-            <button onclick="addHelloWorld()"> Hello World</button>
         </div>
         <div class="col-md-6">
             <h3>Output</h3>
@@ -180,7 +177,9 @@
        <script>
            function addHelloWorld() {
         var textArea = document.getElementById('html-input');
+        var helloworld =document.getElementById('helloworld');
         textArea.value += '<p>Hello World</p>';
+         helloworld.innerhtml = "<h3>Hello world example</h3><p>In the code box below you can see that the text in this case Hello World is displayed this is because it sits within a paragraph or &lt;p&gt; &lt;/p&gt; </p><p>You can edit the output by changing the text between the P tags try it out below</p>"; 
         updateOutput()
     }
        </script>     
