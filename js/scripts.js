@@ -53,3 +53,11 @@ window.addEventListener('DOMContentLoaded', event => {
         textArea.value += '<p>Hello World</p>';
         updateOutput()
     }
+            $(document).ready(function(){
+        $("#searchInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $(".dropdown-menu a").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
