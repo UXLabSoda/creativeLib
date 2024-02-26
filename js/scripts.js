@@ -51,4 +51,5 @@ window.addEventListener('DOMContentLoaded', event => {
     function addHelloWorld() {
         var textArea = document.getElementById('html-input');
         textArea.value += '<p>Hello World</p>';
+        updateOutput()
     }
