@@ -53,11 +53,19 @@ window.addEventListener('DOMContentLoaded', event => {
         textArea.value += '<p>Hello World</p>';
         updateOutput()
     }
-            $(document).ready(function(){
-        $("#searchInput").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $(".dropdown-menu a").filter(function() {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
+ 
+        document.getElementById("searchInput").addEventListener("input", function() {
+            var input, filter, dropdownMenu, items, a, i;
+            input = this.value.toUpperCase();
+            dropdownMenu = document.querySelector(".dropdown-menu");
+            items = dropdownMenu.querySelectorAll(".dropdown-item");
+            
+            for (i = 0; i < items.length; i++) {
+                a = items[i];
+                if (a.textContent.toUpperCase().indexOf(input) > -1) {
+                    a.style.display = "";
+                } else {
+                    a.style.display = "none";
+                }
+            }
         });
-    });
