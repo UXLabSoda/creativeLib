@@ -72,18 +72,14 @@
             <section class="resume-section" id="HTML">
                 <div class="resume-section-content">
                     <h2 class="mb-5">HTML</h2>
-  <select class="select2">
-    <option value="HTML" onchange="addHelloWorld()">Hello world</option>
-    <option value="HTML" onchange="addHelloWorld()">Hello world</option>
-    <option value="2">Option 2</option>
-    <option value="3" onchange="addHelloWorld()">Option 3</option>
-    <option value="4">Option 4</option>
-    <option value="5">Option 5</option>
-    <option value="6">Option 6</option>
-    <option value="7">Option 7</option>
-    <option value="8">Option 8</option>
-
+    <select class="select2" onchange="executeBasedOnSelection()">
+      <option value="nah">Please select an option</option>
+      <option value="HTML">Hello world</option>
+      <option value="HTML2">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
   </select>
+
 <p id="helloworld" ></p>
 <div class="container mt-4">
     <div class="row">
@@ -198,8 +194,33 @@ $(document).ready(function () {
   $(".select2").select2();
 });
 
+
+function executeBasedOnSelection() {
+        var selectedValue = document.querySelector('.select2').value;
+
+        switch (selectedValue) {
+            case 'HTML':
+                addHelloWorld();
+                console.log("fired")
+                break;
+            case 'HTML2':
+             console.log("nah")
+                break;
+            case '2':
+                option2Script("nah");
+                break;
+            case '3':
+                option3Script("nah");
+                break;
+            // Add more cases as needed
+            default:
+                defaultScript("nah");
+                break;
+        }
+    }
            
         function addHelloWorld() {
+          console.log("sent")
         var textArea = document.getElementById('html-input');
         var helloworld =document.getElementById('helloworld');
         textArea.innerHTML = '<p>Hello World</p>';
