@@ -73,9 +73,10 @@
                 <div class="resume-section-content">
                     <h2 class="mb-5">HTML</h2>
   <select class="select2">
-    <option value="HTML" onclick="addHelloWorld()">Hello world</option>
+    <option value="HTML" onchange="addHelloWorld()">Hello world</option>
+    <option value="HTML" onchange="addHelloWorld()">Hello world</option>
     <option value="2">Option 2</option>
-    <option value="3">Option 3</option>
+    <option value="3" onchange="addHelloWorld()">Option 3</option>
     <option value="4">Option 4</option>
     <option value="5">Option 5</option>
     <option value="6">Option 6</option>
@@ -193,30 +194,12 @@
         <script src="js/scripts.js"></script>
        <script>
 
-   
-        // Enable dropdown search functionality
-        document.getElementById("searchInput").addEventListener("input", function() {
-            var input, filter, ul, li, a, i, txtValue;
-            input = document.getElementById('searchInput');
-            filter = input.value.toUpperCase();
-            div = document.getElementById("dropdownMenuButton");
-            a = div.getElementsByTagName('a');
-            for (i = 0; i < a.length; i++) {
-                txtValue = a[i].textContent || a[i].innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    a[i].style.display = "";
-                } else {
-                    a[i].style.display = "none";
-                }
-            }
-        });
-
 $(document).ready(function () {
   $(".select2").select2();
 });
 
            
-           function addHelloWorld() {
+        function addHelloWorld() {
         var textArea = document.getElementById('html-input');
         var helloworld =document.getElementById('helloworld');
         textArea.innerHTML = '<p>Hello World</p>';
