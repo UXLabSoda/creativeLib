@@ -54,18 +54,3 @@ window.addEventListener('DOMContentLoaded', event => {
         updateOutput()
     }
  
-        document.getElementById("searchInput").addEventListener("input", function() {
-            var input, filter, dropdownMenu, items, a, i;
-            input = this.value.toUpperCase();
-            dropdownMenu = document.querySelector(".dropdown-menu");
-            items = dropdownMenu.querySelectorAll(".dropdown-item");
-            
-            for (i = 0; i < items.length; i++) {
-                a = items[i];
-                if (a.textContent.toUpperCase().indexOf(input) > -1) {
-                    a.style.display = "";
-                } else {
-                    a.style.display = "none";
-                }
-            }
-        });
