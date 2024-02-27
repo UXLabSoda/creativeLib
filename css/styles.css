@@ -98,6 +98,20 @@
 }
 
 body {
+  background-color: #0ce8d2;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+select.select2 {
+  width: 300px;
+}
+
+
+body {
   margin: 0;
   font-family: var(--bs-body-font-family);
   font-size: var(--bs-body-font-size);
