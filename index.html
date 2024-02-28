@@ -201,16 +201,17 @@ function executeBasedOnSelection() {
         switch (selectedValue) {
             case 'HTML':
                 addHelloWorld();
-                console.log("fired")
+                console.log("fired");
                 break;
             case 'HTML2':
-             console.log("nah")
+                loadContent('/demos/randomTerrain.html');
+                console.log("nah");
                 break;
             case '2':
-                option2Script("nah");
+                loadContent('./demos/button.html');
                 break;
             case '3':
-                option3Script("nah");
+                loadContent('./demos/image.html');
                 break;
             // Add more cases as needed
             default:
@@ -226,6 +227,18 @@ function executeBasedOnSelection() {
         textArea.innerHTML = '<p>Hello World</p>';
          helloworld.innerHTML  = "<h3>Hello world example</h3><p>In the code box below you can see that the text in this case Hello World is displayed this is because it sits within a paragraph or &lt;p&gt; &lt;/p&gt; </p><p>You can edit the output by changing the text between the P tags try it out below</p>"; 
         updateOutput()
+    }
+
+    function loadContent(url){
+        const output =document.getElementById('output');
+            fetch(url)
+                .then((response) => response.text())
+                .then((html) => {
+                    output.innerHTML= html;
+                })
+                .catch((error) => {
+                    console.warn(error);
+                });
     }
        </script>     
     </body>

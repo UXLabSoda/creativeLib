@@ -54,9 +54,9 @@
   scene.add(terrainMesh);
 
   // Load sand texture for the terrain
-  const sandTexture = new THREE.TextureLoader().load('sand.jpg');
-  material.map = sandTexture;
-  material.needsUpdate = true;
+  // const sandTexture = new THREE.TextureLoader().load('sand.jpg');
+  // material.map = sandTexture;
+  // material.needsUpdate = true;
 
   // Randomly adjust vertex heights for a more natural terrain
   const vertices = terrainMesh.geometry.attributes.position.array;
@@ -77,9 +77,9 @@
     });
 
     // Load sand texture for the buildings
-    const buildingTexture = new THREE.TextureLoader().load('building.jpg');
-    buildingMaterial.map = buildingTexture;
-    buildingMaterial.needsUpdate = true;
+    // const buildingTexture = new THREE.TextureLoader().load('building.jpg');
+    // buildingMaterial.map = buildingTexture;
+    // buildingMaterial.needsUpdate = true;
 
     for (let i = 0; i < numBuildings; i++) {
       const buildingSize = Math.random() * 10 + 5; // Random size
