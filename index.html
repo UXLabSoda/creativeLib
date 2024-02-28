@@ -74,10 +74,10 @@
                     <h2 class="mb-5">HTML</h2>
     <select class="select2" onchange="executeBasedOnSelection()">
       <option value="nah">Please select an option</option>
-      <option value="HTML">Hello world</option>
-      <option value="HTML2">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+      <option value="HelloWorld">Hello world</option>
+      <option value="Images">Images</option>
+      <option value="Button">Button</option>
+      <option value="Select">Select</option>
   </select>
 
 <p id="helloworld" ></p>
@@ -199,23 +199,25 @@ function executeBasedOnSelection() {
         var selectedValue = document.querySelector('.select2').value;
 
         switch (selectedValue) {
-            case 'HTML':
+            case 'HelloWorld':
                 addHelloWorld();
                 console.log("fired");
                 break;
-            case 'HTML2':
-                loadContent('/demos/randomTerrain.html');
-                console.log("nah");
+            case 'Images':
+                loadContent('/demos/Image.html');
                 break;
-            case '2':
+            case 'Select':
+                loadContent('/demos/select.html');
+                break;
+            case 'Button':
                 loadContent('./demos/button.html');
                 break;
-            case '3':
-                loadContent('./demos/image.html');
+            case 'Table':
+                loadContent('./demos/table.html');
                 break;
             // Add more cases as needed
             default:
-                defaultScript("nah");
+                loadContent('./demos/Div.html');
                 break;
         }
     }
@@ -230,10 +232,12 @@ function executeBasedOnSelection() {
     }
 
     function loadContent(url){
+        const textArea = document.getElementById('html-input');
         const output =document.getElementById('output');
             fetch(url)
                 .then((response) => response.text())
                 .then((html) => {
+                    textArea.innerHTML = html;
                     output.innerHTML= html;
                 })
                 .catch((error) => {
