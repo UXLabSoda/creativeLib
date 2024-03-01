@@ -1,202 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Creative code Library</title>
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-  
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <span class="d-block d-lg-none">Creative coding Library</span>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>Creative code Library</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico"/>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet"
+          type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://unpkg.com/three@<version>/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@<version>/examples/jsm/"
+          }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@9b8609bd84a292ef97bf1e8589401ae0d3201280/dist/aframe-master.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet"/>
+</head>
+<body id="page-top">
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <span class="d-block d-lg-none">Creative coding Library</span>
+    </a>
+    <img class="img-fluid mx-auto d-block" src="assets/img/external_night.jpg"/>
+    <img class="img-fluid" src="assets/img/2.3-Logo-black.jpg"/>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
+            class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#welcome">Welcome</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#HTML">HTML</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#css">css</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#JS">JS</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#p5">p5</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#WebGL">WebGL</a></li>
+        </ul>
+    </div>
+</nav>
+<!-- Page Content-->
+<div class="container-fluid p-0">
+    <!-- About-->
+    <section class="resume-section" id="Welcome">
+        <div class="resume-section-content">
+            <h1 class="mb-0">
+                SODA
+                <span class="text-primary">Creative Coding Library</span>
+            </h1>
+            <div class="subheading mb-5">
+                Your one stop shop for examples, inspiration and innovation
 
-            </a>
-            <img class="img-fluid mx-auto d-block" src = "assets/img/external_night.jpg" />
-            <img class="img-fluid" src = "assets/img/2.3-Logo-black.jpg" />
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#welcome">Welcome</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#HTML">HTML</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#css">css</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#JS">JS</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#p5">p5</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#WebGL">WebGL</a></li>
-                </ul>
             </div>
-        </nav>
-        <!-- Page Content-->
-        <div class="container-fluid p-0">
-            <!-- About-->
-            <section class="resume-section" id="Welcome">
-                <div class="resume-section-content">
-                    <h1 class="mb-0">
-                        SODA
-                        <span class="text-primary">Creative Coding Library</span>
-                    </h1>
-                    <div class="subheading mb-5">
-                        Your one stop shop for examples, inspiration and innovation
-                        
-                    </div>
-                    <p class="lead mb-5">
-                        Simply select the area you want to look into via the menu to the left and get started on your creative coding journey. <br>
-                        If you have a project you think would benefit students if shared on this site please let us know via: <br>
-                        (Insert chris + Aaron emails)
-                    </p>
+            <p class="lead mb-5">
+                Simply select the area you want to look into via the menu to the left and get started on your creative
+                coding journey. <br>
+                If you have a project you think would benefit students if shared on this site please let us know via:
+                <br>
+                (Insert chris + Aaron emails)
+                Chris Godber : c.godber@mmu.ac.uk
+                Aaron Byrant : a.byrant@mmu.ac.uk
+            </p>
 
 
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Experience-->
-            <section class="resume-section" id="HTML">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">HTML</h2>
-    <select class="select2" onchange="executeBasedOnSelection()">
-      <option value="nah">Please select an option</option>
-      <option value="HelloWorld">Hello world</option>
-      <option value="Images">Images</option>
-      <option value="Button">Button</option>
-      <option value="Select">Select</option>
-  </select>
-
-<p id="helloworld" ></p>
-<div class="container mt-4">
-    <div class="row">
-        <div class="col-md-6">
-            <h3>Edit HTML Code</h3>
-            <textarea id="html-input" class="form-control" rows="10"></textarea>
         </div>
-        <div class="col-md-6">
-            <h3>Output</h3>
-            <div id="output"></div>
+    </section>
+    <hr class="m-0"/>
+    <!-- Experience-->
+    <section class="resume-section" id="HTML">
+        <div class="resume-section-content">
+            <h2 class="mb-5">HTML</h2>
+            <select class="select2" onchange="executeBasedOnSelection()">
+                <option value="nah">Please select an option</option>
+                <option value="HelloWorld">Hello world</option>
+                <option value="Images">Images</option>
+                <option value="Button">Button</option>
+                <option value="Select">Select</option>
+                <option value="List">List</option>
+            </select>
+
+            <p id="helloworld"></p>
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Edit HTML Code</h3>
+                        <textarea id="html-input" class="form-control" rows="10"></textarea>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Output</h3>
+                        <div id="output1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+</section>
+<hr class="m-0"/>
+<!-- Education-->
+<section class="resume-section" id="css">
+    <div class="resume-section-content">
+        <h2 class="mb-5">css</h2>
+        <h3>Colour text example</h3>
+        <p>In the code box below you can see that the text in this case "Hello World" is displayed in the red this is
+            because it has the inline style (styling withing the html tag) of style="color: red; </p>
+        <p>You can edit the output by changing the colour to either a colour, a hex value or an RGB value.</p>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Edit HTML Code</h3>
+                    <textarea id="html-input" class="form-control"
+                              rows="10"><p style="color: red;">Hello World</p></textarea>
+                </div>
+                <div class="col-md-6">
+                    <h3>Output</h3>
+                    <div id="output2"></div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-                        </div>
-                      </div>
+</section>
+<hr class="m-0"/>
+<!-- Skills-->
+<section class="resume-section" id="JS">
+    <div class="resume-section-content">
+        <h2 class="mb-5">js</h2>
+        <select class="select2" onchange="executeBasedOnSelection3()">
+            <option value="nah">Please select an option</option>
+            <option value="ChangeBackgroundColour">Change Background Colour</option>
+        </select>
+        <h3>Hello world example</h3>
+        <p>In the code box below you can see that the text in this case "Hello World" is displayed this is because it
+            sits within a paragraph or &lt;p&gt; &lt;/p&gt; </p>
+        <p>You can edit the output by changing the text between the P tags try it out below</p>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Edit HTML Code</h3>
+                    <textarea id="html-input" class="form-control" rows="10"><p>Hello World</p></textarea>
                 </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Education-->
-            <section class="resume-section" id="css">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">css</h2>
-                    <h3>Colour text example</h3>
-                    <p>In the code box below you can see that the text in this case "Hello World" is displayed in the red this is because it has the inline style (styling withing the html tag) of style="color: red; </p>
-                    <p>You can edit the output by changing the colour to either a colour, a hex value or an RGB value.</p>
-                      <div class="container mt-4">
-                          <div class="row">
-                            <div class="col-md-6">
-                              <h3>Edit HTML Code</h3>
-                              <textarea id="html-input" class="form-control" rows="10"><p style="color: red;">Hello World</p></textarea>
-                            </div>
-                            <div class="col-md-6">
-                              <h3>Output</h3>
-                              <div id="output"></div>
-                            </div>
-                          </div>
-                        </div>
-                  </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Skills-->
-            <section class="resume-section" id="JS">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">js</h2>
-                    <h3>Hello world example</h3>
-                    <p>In the code box below you can see that the text in this case "Hello World" is displayed this is because it sits within a paragraph or &lt;p&gt; &lt;/p&gt; </p>
-                    <p>You can edit the output by changing the text between the P tags try it out below</p>
-                      <div class="container mt-4">
-                          <div class="row">
-                            <div class="col-md-6">
-                              <h3>Edit HTML Code</h3>
-                              <textarea id="html-input" class="form-control" rows="10"><p>Hello World</p></textarea>
-                            </div>
-                            <div class="col-md-6">
-                              <h3>Output</h3>
-                              <div id="output"></div>
-                            </div>
-                          </div>
-                        </div>
-                  </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Interests-->
-            <section class="resume-section" id="p5">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">P5</h2>
-                    <h3>Hello world example</h3>
-                    <p>In the code box below you can see that the text in this case "Hello World" is displayed this is because it sits within a paragraph or &lt;p&gt; &lt;/p&gt; </p>
-                    <p>You can edit the output by changing the text between the P tags try it out below</p>
-                      <div class="container mt-4">
-                          <div class="row">
-                            <div class="col-md-6">
-                              <h3>Edit HTML Code</h3>
-                              <textarea id="html-input" class="form-control" rows="10"><p>Hello World</p></textarea>
-                            </div>
-                            <div class="col-md-6">
-                              <h3>Output</h3>
-                              <div id="output"></div>
-                            </div>
-                          </div>
-                        </div>
-                  </div>
-            </section>
-            <section class="resume-section" id="WebGL">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">WebGL</h2>
-                    <h3>Hello world example</h3>
-                    <p>In the code box below you can see that the text in this case "Hello World" is displayed this is because it sits within a paragraph or &lt;p&gt; &lt;/p&gt; </p>
-                    <p>You can edit the output by changing the text between the P tags try it out below</p>
-                      <div class="container mt-4">
-                          <div class="row">
-                            <div class="col-md-6">
-                              <h3>Edit HTML Code</h3>
-                              <textarea id="html-input" class="form-control" rows="10"><p>Hello World</p></textarea>
-                            </div>
-                            <div class="col-md-6">
-                              <h3>Output</h3>
-                              <div id="output"></div>
-                            </div>
-                          </div>
-                        </div>
-                  </div>
-            </section>
+                <div class="col-md-6">
+                    <h3>Output</h3>
+                    <div id="output3"></div>
+                </div>
+            </div>
         </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-       <script>
+    </div>
+</section>
+<hr class="m-0"/>
+<!-- Interests-->
+<section class="resume-section" id="p5">
+    <div class="resume-section-content">
+        <h2 class="mb-5">P5</h2>
+        <select class="select2" onchange="executeBasedOnSelectionP5()">
+            <option value="nah">Please select an option</option>
+            <option value="Snow">Falling Snow</option>
+        </select>
+        <h3>Hello world example</h3>
+        <p>In the code box below you can see that the text in this case "Hello World" is displayed this is because it
+            sits within a paragraph or &lt;p&gt; &lt;/p&gt; </p>
+        <p>You can edit the output by changing the text between the P tags try it out below</p>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Edit HTML Code</h3>
+                    <textarea id="html-input" class="form-control" rows="10"><p>Hello World</p></textarea>
+                </div>
+                <div class="col-md-6">
+                    <h3>Output</h3>
+                    <div id="output4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="resume-section" id="WebGL">
+    <div class="resume-section-content">
+        <h2 class="mb-5">WebGL</h2>
+        <h3>Hello world example</h3>
+        <p>In the code box below you can see that the text in this case "Hello World" is displayed this is because it
+            sits within a paragraph or &lt;p&gt; &lt;/p&gt; </p>
+        <p>You can edit the output by changing the text between the P tags try it out below</p>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Edit HTML Code</h3>
+                    <textarea id="html-input" class="form-control" rows="10"><p>Hello World</p></textarea>
+                </div>
+                <div class="col-md-6">
+                    <h3>Output</h3>
+                    <div id="output5"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+<script>
 
-$(document).ready(function () {
-  $(".select2").select2();
-});
+    $(document).ready(function () {
+        $(".select2").select2();
+    });
 
 
-function executeBasedOnSelection() {
-        var selectedValue = document.querySelector('.select2').value;
+    function executeBasedOnSelection() {
+        const selectedValue = document.querySelector('.select2').value;
 
         switch (selectedValue) {
             case 'HelloWorld':
@@ -204,16 +232,32 @@ function executeBasedOnSelection() {
                 console.log("fired");
                 break;
             case 'Images':
-                loadContent('/demos/Image.html');
+                loadContent('/demos/Image.html', 1);
                 break;
             case 'Select':
-                loadContent('/demos/select.html');
+                loadContent('/demos/select.html', 1);
                 break;
             case 'Button':
-                loadContent('./demos/button.html');
+                loadContent('./demos/button.html', 1);
                 break;
             case 'Table':
-                loadContent('./demos/table.html');
+                loadContent('./demos/table.html', 1);
+                break;
+            case 'List':
+                loadContent('./demos/List.html', 1);
+                break;
+            // Add more cases as needed
+            default:
+                loadContent('./demos/Div.html', 1);
+                break;
+        }
+    }
+
+    function executeBasedOnSelection3() {
+        const selectedValueJS = document.querySelector('.select2').value;
+        switch (selectedValueJS) {
+            case 'ChangeBackgroundColour':
+                loadContent('/demos/js/backgroundColorChange.html',3);
                 break;
             // Add more cases as needed
             default:
@@ -221,29 +265,43 @@ function executeBasedOnSelection() {
                 break;
         }
     }
-           
-        function addHelloWorld() {
-          console.log("sent")
+
+    function executeBasedOnSelectionP5() {
+        const selectedValueJS = document.querySelector('.select2').value;
+        switch (selectedValueJS) {
+            case 'Snow':
+                loadContent('/demos/p5/snow.html',4);
+                break;
+            // Add more cases as needed
+            default:
+                loadContent('./demos/Div.html');
+                break;
+        }
+    }
+
+    function addHelloWorld() {
+        console.log("sent")
         var textArea = document.getElementById('html-input');
-        var helloworld =document.getElementById('helloworld');
+        var helloworld = document.getElementById('helloworld');
         textArea.innerHTML = '<p>Hello World</p>';
-         helloworld.innerHTML  = "<h3>Hello world example</h3><p>In the code box below you can see that the text in this case Hello World is displayed this is because it sits within a paragraph or &lt;p&gt; &lt;/p&gt; </p><p>You can edit the output by changing the text between the P tags try it out below</p>"; 
+        helloworld.innerHTML = "<h3>Hello world example</h3><p>In the code box below you can see that the text in this case Hello World is displayed this is because it sits within a paragraph or &lt;p&gt; &lt;/p&gt; </p><p>You can edit the output by changing the text between the P tags try it out below</p>";
         updateOutput()
     }
 
-    function loadContent(url){
+    function loadContent(url,outputID) {
         const textArea = document.getElementById('html-input');
-        const output =document.getElementById('output');
-            fetch(url)
-                .then((response) => response.text())
-                .then((html) => {
-                    textArea.innerHTML = html;
-                    output.innerHTML= html;
-                })
-                .catch((error) => {
-                    console.warn(error);
-                });
+        const output = document.getElementById('output'+outputID);
+        console.log(output);
+        fetch(url)
+            .then((response) => response.text())
+            .then((html) => {
+                textArea.innerHTML = html;
+                output.innerHTML = html;
+            })
+            .catch((error) => {
+                console.warn(error);
+            });
     }
-       </script>     
-    </body>
+</script>
+</body>
 </html>

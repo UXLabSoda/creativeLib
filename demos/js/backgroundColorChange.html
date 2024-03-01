@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .colorBox{
+        background: #0ce8d2;
+        width: 200px;
+        height: 200px;
+        margin:1em;
+    }
+  .bgcolor {
+    background-color: black;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  </style>
+  <script>
+    // Script.js //
+    const button = document.querySelector("button");
+    const box = document.querySelector('.colorBox');
+
+    button.addEventListener("click", function (){
+      box.classList.toggle("bgcolor");
+    });
+  </script>
+</head>
+<body>
+<h3>Change Box Color</h3>
+<button>Click Me</button>
+<div class = 'colorBox'></div>
+</body>
+</html>
