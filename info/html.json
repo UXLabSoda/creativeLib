@@ -1,6 +1,10 @@
-{"html":[
-  { "demoname":"HelloWorld", "description":"<h3>Hello World</h3><p>Hello World written using the paragrapth tag in html. Adding a '<p>' tag tells the browser that you are creating a new paragrapth. Writing '</p>' end the paragrapth</p>"},
-  { "demoname":"Heading", "description":"Examples of the 6 Heading types" },
-  { "demoname":"Table", "description":"example of a table in html, used for presenting data"},
-  { "demoname":"Image", "description":"example of using the image tag in HTML. Used for presenting images"}
-]}
+[
+  { "demoname":"HelloWorld", "description":"<h3>Hello World</h3><p>Hello World written using the paragrapth tag in html. Adding this tag tells the browser that you are creating a new paragrapth. </p>"},
+  { "demoname":"Image", "description":"example of using the image tag in HTML. Used for presenting images"},
+  { "demoname":"Button", "description":"example of how to create a button with html"},
+  { "demoname":"Select", "description":"example of using the Select Form in HTML"},
+  { "demoname":"List", "description":"example of using the List tag in HTML. Used to create lists of items"},
+  { "demoname":"Heading", "description":"<h3>Heading</h3> <p>Examples of the 6 Heading types</p>" },
+  { "demoname":"Heading", "description":"<h3>Heading</h3> <p>Examples of the 6 Heading types</p>" },
+  { "demoname":"Table", "description":"<h3>Tables</h3> <p>example of a table in html, used for presenting data</p>"}
+]
