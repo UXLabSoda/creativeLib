@@ -66,19 +66,18 @@
             </h1>
             <div class="subheading mb-5">
                 Your one stop shop for examples, inspiration and innovation
-
             </div>
             <p class="lead mb-5">
                 Simply select the area you want to look into via the menu to the left and get started on your creative
                 coding journey. <br>
                 If you have a project you think would benefit students if shared on this site please let us know via:
                 <br>
-                (Insert chris + Aaron emails)
-                Chris Godber : c.godber@mmu.ac.uk
-                Aaron Byrant : a.byrant@mmu.ac.uk
+                <h3>Contact</h3>
+                <ul>
+                    <li>Chris Godber : c.godber@mmu.ac.uk</li>
+                    <li>Aaron Bryant : a.bryant@mmu.ac.uk</li>
+                </ul>
             </p>
-
-
         </div>
     </section>
     <hr class="m-0"/>
@@ -89,10 +88,12 @@
             <select class="select2" onchange="executeBasedOnSelection()">
                 <option value="nah">Please select an option</option>
                 <option value="HelloWorld">Hello world</option>
-                <option value="Images">Images</option>
+                <option value="Images">Image</option>
                 <option value="Button">Button</option>
                 <option value="Select">Select</option>
                 <option value="List">List</option>
+                <option value="Heading">Heading</option>
+                <option value="Table">Table</option>
             </select>
 
             <p id="helloworld"></p>
@@ -100,7 +101,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <h3>Edit HTML Code</h3>
-                        <textarea id="html-input" class="form-control" rows="10"></textarea>
+                        <textarea id="html-input1" class="form-control" rows="10"></textarea>
                     </div>
                     <div class="col-md-6">
                         <h3>Output</h3>
@@ -125,7 +126,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <h3>Edit HTML Code</h3>
-                    <textarea id="html-input" class="form-control"
+                    <textarea id="html-input2" class="form-control"
                               rows="10"><p style="color: red;">Hello World</p></textarea>
                 </div>
                 <div class="col-md-6">
@@ -141,7 +142,7 @@
 <section class="resume-section" id="JS">
     <div class="resume-section-content">
         <h2 class="mb-5">js</h2>
-        <select class="select2" onchange="executeBasedOnSelection3()">
+        <select class="select2" onchange="executeBasedOnSelectionJS()">
             <option value="nah">Please select an option</option>
             <option value="ChangeBackgroundColour">Change Background Colour</option>
         </select>
@@ -153,7 +154,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <h3>Edit HTML Code</h3>
-                    <textarea id="html-input" class="form-control" rows="10"><p>Hello World</p></textarea>
+                    <textarea id="html-input3" class="form-control" rows="10"><p>Hello World</p></textarea>
                 </div>
                 <div class="col-md-6">
                     <h3>Output</h3>
@@ -180,7 +181,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <h3>Edit HTML Code</h3>
-                    <textarea id="html-input" class="form-control" rows="10"><p>Hello World</p></textarea>
+                    <textarea id="html-input4" class="form-control" rows="10"><p>Hello World</p></textarea>
                 </div>
                 <div class="col-md-6">
                     <h3>Output</h3>
@@ -201,7 +202,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <h3>Edit HTML Code</h3>
-                    <textarea id="html-input" class="form-control" rows="10"><p>Hello World</p></textarea>
+                    <textarea id="html-input5" class="form-control" rows="10"><p>Hello World</p></textarea>
                 </div>
                 <div class="col-md-6">
                     <h3>Output</h3>
@@ -228,8 +229,13 @@
 
         switch (selectedValue) {
             case 'HelloWorld':
-                addHelloWorld();
-                console.log("fired");
+                loadContent('/demos/HelloWorld.html', 1);
+                break;
+            case 'Heading':
+                loadContent('/demos/Heading.html', 1);
+                break;
+            case 'Table':
+                loadContent('/demos/table.html', 1);
                 break;
             case 'Images':
                 loadContent('/demos/Image.html', 1);
@@ -239,9 +245,6 @@
                 break;
             case 'Button':
                 loadContent('./demos/button.html', 1);
-                break;
-            case 'Table':
-                loadContent('./demos/table.html', 1);
                 break;
             case 'List':
                 loadContent('./demos/List.html', 1);
@@ -253,15 +256,15 @@
         }
     }
 
-    function executeBasedOnSelection3() {
+    function executeBasedOnSelectionJS() {
         const selectedValueJS = document.querySelector('.select2').value;
         switch (selectedValueJS) {
             case 'ChangeBackgroundColour':
-                loadContent('/demos/js/backgroundColorChange.html',3);
+                loadContent('./demos/js/backgroundColorChange.html',3);
                 break;
             // Add more cases as needed
             default:
-                loadContent('./demos/Div.html');
+                loadContent('./demos/Div.html', 3);
                 break;
         }
     }
@@ -270,11 +273,11 @@
         const selectedValueJS = document.querySelector('.select2').value;
         switch (selectedValueJS) {
             case 'Snow':
-                loadContent('/demos/p5/snow.html',4);
+                loadContent('./demos/p5/snow.html',4);
                 break;
             // Add more cases as needed
             default:
-                loadContent('./demos/Div.html');
+                loadContent('./demos/Div.html', 4);
                 break;
         }
     }
@@ -289,7 +292,7 @@
     }
 
     function loadContent(url,outputID) {
-        const textArea = document.getElementById('html-input');
+        const textArea = document.getElementById('html-input'+outputID);
         const output = document.getElementById('output'+outputID);
         console.log(output);
         fetch(url)
@@ -297,6 +300,7 @@
             .then((html) => {
                 textArea.innerHTML = html;
                 output.innerHTML = html;
+                // updateOutput(outputID);
             })
             .catch((error) => {
                 console.warn(error);

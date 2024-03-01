@@ -33,9 +33,9 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
-  function updateOutput() {
-    var htmlCode = $('#html-input').val(); // Get HTML code from the input textarea
-    $('#output').html(htmlCode); // Set the HTML content of the output box
+  function updateOutput(outputID) {
+    var htmlCode = $('#html-input'+outputID).val(); // Get HTML code from the input textarea
+    $('#output'+outputID).html(htmlCode); // Set the HTML content of the output box
   }
 
   // Call updateOutput function on page load
@@ -44,13 +44,26 @@ window.addEventListener('DOMContentLoaded', event => {
   });
 
   // Call updateOutput function whenever the user types in the textarea
-  $('#html-input').on('input', function() {
-    updateOutput();
+  $('#html-input1').on('input', function() {
+    updateOutput(1);
   });
 
-    function addHelloWorld() {
-        var textArea = document.getElementById('html-input');
-        textArea.value += '<p>Hello World</p>';
-        updateOutput()
-    }
- 
+// Call updateOutput function whenever the user types in the textarea
+$('#html-input2').on('input', function() {
+    updateOutput(2);
+});
+
+// Call updateOutput function whenever the user types in the textarea
+$('#html-input3').on('input', function() {
+    updateOutput(3);
+});
+
+// Call updateOutput function whenever the user types in the textarea
+$('#html-input4').on('input', function() {
+    updateOutput(4);
+});
+
+$('#html-input5').on('input', function() {
+    updateOutput(5);
+});
+

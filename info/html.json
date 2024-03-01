@@ -1,0 +1,6 @@
+{"html":[
+  { "demoname":"HelloWorld", "description":"Hello World written using the <p> for paragrapth tag in html. Adding a <p> tag tells the browser that you are creating a new paragrapth. Writing </p> end the paragrapth"},
+  { "demoname":"Heading", "description":"Examples of the 6 Heading types" },
+  { "demoname":"Table", "description":"example of a table in html, used for presenting data"},
+  { "demoname":"Image", "description":"example of using the image tag in HTML. Used for presenting images"}
+]}
