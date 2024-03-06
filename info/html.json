@@ -1,10 +1,9 @@
 [
   { "demoname":"HelloWorld", "description":"<h3>Hello World</h3><p>Hello World written using the paragrapth tag in html. Adding this tag tells the browser that you are creating a new paragrapth. </p>"},
-  { "demoname":"Image", "description":"example of using the image tag in HTML. Used for presenting images"},
-  { "demoname":"Button", "description":"example of how to create a button with html"},
-  { "demoname":"Select", "description":"example of using the Select Form in HTML"},
-  { "demoname":"List", "description":"example of using the List tag in HTML. Used to create lists of items"},
-  { "demoname":"Heading", "description":"<h3>Heading</h3> <p>Examples of the 6 Heading types</p>" },
-  { "demoname":"Heading", "description":"<h3>Heading</h3> <p>Examples of the 6 Heading types</p>" },
-  { "demoname":"Table", "description":"<h3>Tables</h3> <p>example of a table in html, used for presenting data</p>"}
+  { "demoname":"Image", "description":"<h3>Add an Image</h3><p>example of using the image tag in HTML. Used for presenting images</p>"},
+  { "demoname":"Button", "description":"<h3>Create a Button</h3><p>example of how to create a button with html</p>"},
+  { "demoname":"Select", "description":"<h3>Add a Select form with options</h3><p>example of using the Select Form in HTML</p>"},
+  { "demoname":"List", "description":"<h3>Create List Items</h3><p>example of using the List tag in HTML. Used to create lists of items</p>"},
+  { "demoname":"Heading", "description":"<h3>Headings</h3> <p>Examples of the 6 Heading types</p>" },
+  { "demoname":"Table", "description":"<h3>Create a data Table</h3> <p>example of a table in html, used for presenting data</p>"}
 ]

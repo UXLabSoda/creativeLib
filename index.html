@@ -84,7 +84,9 @@
     <!-- Experience-->
     <section class="resume-section" id="HTML">
         <div class="resume-section-content">
-            <h2 class="mb-5">HTML</h2>
+            <h2 class="mb-2">HTML</h2>
+            <p>HTML stands for Hypertext Markup Language.</p>
+            <h4>Select Example:</h4>
             <select class="select2" onchange="executeBasedOnSelection()">
                 <option value="nah">Please select an option</option>
                 <option value="HelloWorld">Hello world</option>
@@ -95,8 +97,9 @@
                 <option value="Heading">Heading</option>
                 <option value="Table">Table</option>
             </select>
+
             <p id="helloworld"></p>
-            <div class="container mt-4">
+            <div class="container mb-2">
                 <div class="row">
                     <div class="col-md-6">
                         <h3>Edit HTML Code</h3>
@@ -217,7 +220,7 @@
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
 <script>
-
+    // select 2 is a form libray
     $(document).ready(function () {
         $(".select2").select2();
         loadJSON();
@@ -241,7 +244,7 @@
             case 'Select':
                 loadContent('/demos/select.html', 1, 3);
                 break;
-            case 'list':
+            case 'List':
                 loadContent('/demos/list.html', 1,4);
                 break;
             case 'Heading':
@@ -328,7 +331,6 @@
                 textArea.innerHTML = html;
                 helloworld.innerHTML = infoJSON[dropdownItemID].description;
                 output.innerHTML = html;
-                // updateOutput(outputID);
                 updateOutput(outputID);
             })
             .catch((error) => {

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+    />
+    <title>3D Bar Chart with Labels</title>
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<script type="module">
+    import * as THREE from "https://threejsfundamentals.org/threejs/resources/threejs/r125/build/three.module.js";
+
+    // Dummy data
+    const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+    const visitorsData = [10, 25, 15, 30, 20];
+
+    // Set up scene
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+    );
+
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // Set up lights
+    const ambientLight = new THREE.AmbientLight(0x404040);
+    scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff);
+    directionalLight.position.set(1, 1, 1).normalize();
+    scene.add(directionalLight);
+
+    // Create bars and labels
+    const barGeometry = new THREE.BoxGeometry(1, 1, 1);
+
+    const labelCanvas = document.createElement("canvas");
+    const labelContext = labelCanvas.getContext("2d");
+    labelContext.font = "Bold 20px Arial";
+    labelContext.fillStyle = "white";
+
+    for (let i = 0; i < visitorsData.length; i++) {
+        // Create bar
+        const barMaterial = new THREE.MeshPhongMaterial({
+            color: 0x2194ce,
+        });
+        const bar = new THREE.Mesh(barGeometry, barMaterial);
+        bar.position.x = i * 2;
+        bar.scale.y = visitorsData[i];
+        scene.add(bar);
+
+        // Create label
+        const label = daysOfWeek[i] + ": " + visitorsData[i] + " visitors";
+        labelContext.clearRect(0, 0, labelCanvas.width, labelCanvas.height);
+        labelCanvas.width = labelContext.measureText(label).width + 10;
+        labelCanvas.height = 30;
+        labelContext.fillStyle = "rgba(33, 148, 206, 0.8)";
+        labelContext.fillRect(0, 0, labelCanvas.width, labelCanvas.height);
+        labelContext.fillStyle = "white";
+        labelContext.fillText(label, 5, 20);
+
+        const labelTexture = new THREE.CanvasTexture(labelCanvas);
+        const labelMaterial = new THREE.MeshBasicMaterial({
+            map: labelTexture,
+            side: THREE.DoubleSide,
+        });
+
+        const labelPlane = new THREE.Mesh(
+            new THREE.PlaneGeometry(1.5, 0.5),
+            labelMaterial
+        );
+        labelPlane.position.set(i * 2, visitorsData[i] + 0.75, 0);
+        scene.add(labelPlane);
+    }
+
+    // Set up camera position
+    camera.position.z = 10;
+
+    // Handle window resize
+    window.addEventListener("resize", () => {
+        const newWidth = window.innerWidth;
+        const newHeight = window.innerHeight;
+
+        camera.aspect = newWidth / newHeight;
+        camera.updateProjectionMatrix();
+
+        renderer.setSize(newWidth, newHeight);
+    });
+
+    // Animation loop
+    const animate = () => {
+        requestAnimationFrame(animate);
+        renderer.render(scene, camera);
+    };
+
+    animate();
+</script>
+</body>
+</html>

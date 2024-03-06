@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+    />
+    <title>Textured Terrain and Buildings with Orbit Camera</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<script type="module">
+    import * as THREE from "https://threejsfundamentals.org/threejs/resources/threejs/r125/build/three.module.js";
+    import { OrbitControls } from "https://threejsfundamentals.org/threejs/resources/threejs/r125/examples/jsm/controls/OrbitControls.js";
+
+    // Set up scene
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+    );
+
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // Set up lights
+    const ambientLight = new THREE.AmbientLight(0x404040);
+    scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff);
+    directionalLight.position.set(1, 1, 1).normalize();
+    scene.add(directionalLight);
+
+    // Generate terrain
+    const terrainSize = 450;
+    const geometry = new THREE.PlaneGeometry(terrainSize, terrainSize, 49, 49);
+
+    const material = new THREE.MeshPhongMaterial({
+        color: 0xffffff, // Default color (white) for initial visibility
+        wireframe: false,
+        flatShading: true,
+    });
+
+    const terrainMesh = new THREE.Mesh(geometry, material);
+    scene.add(terrainMesh);
+
+    // Load sand texture for the terrain
+    const sandTexture = new THREE.TextureLoader().load('sand.jpg');
+    material.map = sandTexture;
+    material.needsUpdate = true;
+
+    // Randomly adjust vertex heights for a more natural terrain
+    const vertices = terrainMesh.geometry.attributes.position.array;
+    for (let i = 0; i < vertices.length; i += 3) {
+        const xOffset = Math.random() * 2 - 1; // Random value between -1 and 1
+        const yOffset = Math.random() * 2 - 1;
+        const height = Math.random() * 5;
+        vertices[i + 2] = height; // Adjust the z-coordinate (height)
+    }
+    terrainMesh.geometry.attributes.position.needsUpdate = true;
+
+    // Generate random cubes representing buildings
+    const generateBuildings = () => {
+        const numBuildings = 30; // You can adjust the number of buildings
+
+        const buildingMaterial = new THREE.MeshPhongMaterial({
+            color: 0x808080, // Gray color for buildings
+        });
+
+        // Load sand texture for the buildings
+        const buildingTexture = new THREE.TextureLoader().load('building.jpg');
+        buildingMaterial.map = buildingTexture;
+        buildingMaterial.needsUpdate = true;
+
+        for (let i = 0; i < numBuildings; i++) {
+            const buildingSize = Math.random() * 10 + 5; // Random size
+            const buildingHeight = Math.random() * 60 + 5; // Random height
+
+            const buildingGeometry = new THREE.BoxGeometry(
+                buildingSize,
+                buildingSize,
+                buildingHeight
+            );
+
+            const buildingMesh = new THREE.Mesh(buildingGeometry, buildingMaterial);
+            buildingMesh.position.set(
+                Math.random() * terrainSize / 2.5,
+                Math.random() * terrainSize / 2.5,
+                buildingHeight / 2 // Ensure the building sits on the terrain
+            );
+
+            scene.add(buildingMesh);
+        }
+    };
+
+    // Call the function to generate buildings
+    generateBuildings();
+
+    // Set up camera position
+    camera.position.set(terrainSize / 2, 10, terrainSize / 2);
+    camera.lookAt(new THREE.Vector3(terrainSize / 2, 0, terrainSize / 2));
+
+    // Set up orbit controls
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.25;
+    controls.rotateSpeed = 0.35;
+
+    // Handle window resize
+    window.addEventListener("resize", () => {
+        const newWidth = window.innerWidth;
+        const newHeight = window.innerHeight;
+
+        camera.aspect = newWidth / newHeight;
+        camera.updateProjectionMatrix();
+
+        renderer.setSize(newWidth, newHeight);
+    });
+
+    // Animation loop
+    const animate = () => {
+        requestAnimationFrame(animate);
+
+        controls.update();
+
+        renderer.render(scene, camera);
+    };
+
+    animate();
+</script>

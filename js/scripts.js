@@ -40,7 +40,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
   // Call updateOutput function on page load
   $(document).ready(function() {
-    updateOutput();
+    updateOutput(1);
   });
 
   // Call updateOutput function whenever the user types in the textarea
